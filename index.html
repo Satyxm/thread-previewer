@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread Preview</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-thread"></i></h1>
+        </header>
+        
+        <div class="profile-section">
+            <div class="profile-header">
+                <div class="profile-avatar-container">
+                    <div class="profile-avatar" id="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <label class="avatar-upload">
+                        <i class="fas fa-camera"></i>
+                        <input type="file" accept="image/*" onchange="handleProfilePhotoUpload(this)">
+                    </label>
+                </div>
+                <div class="profile-info">
+                    <input type="text" class="profile-name" id="profile-name" placeholder="Your Name" onchange="updatePreview()">
+                    <input type="text" class="profile-handle" id="profile-handle" placeholder="@yourhandle" onchange="updatePreview()">
+                </div>
+                <button class="reset-session">
+                    <i class="fas fa-redo"></i> Reset Session
+                </button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="editor-section">
+                <h2>Editor</h2>
+                <div id="tweets-container">
+                    <div class="tweet-input-container">
+                        <div class="tweet-input-wrapper">
+                            <textarea class="tweet-input" placeholder="Start your thread... (1/25)"></textarea>
+                            <div class="media-preview"></div>
+                            <div class="poll-container" style="display: none;">
+                                <div class="poll-options">
+                                    <input type="text" class="poll-option" placeholder="Option 1">
+                                    <input type="text" class="poll-option" placeholder="Option 2">
+                                    <input type="text" class="poll-option" placeholder="Option 3">
+                                    <input type="text" class="poll-option" placeholder="Option 4">
+                                </div>
+                                <div class="poll-duration">
+                                    <select>
+                                        <option value="1">1 day</option>
+                                        <option value="3">3 days</option>
+                                        <option value="7">7 days</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tweet-actions">
+                            <div class="media-actions">
+                                <label class="media-btn">
+                                    <i class="far fa-image"></i>
+                                    <input type="file" accept="image/*" onchange="handleImageUpload(this)">
+                                </label>
+                                <label class="media-btn">
+                                    <i class="far fa-file-video"></i>
+                                    <input type="file" accept="video/*,image/gif" onchange="handleGifUpload(this)">
+                                </label>
+                                <button class="media-btn" onclick="togglePoll(this)">
+                                    <i class="fas fa-chart-bar"></i>
+                                </button>
+                            </div>
+                            <div class="tweet-buttons">
+                                <button class="delete-tweet-btn" onclick="deleteTweet(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <button class="add-tweet-btn" onclick="addNewTweet()">
+                                    <i class="fas fa-plus"></i> Add Post
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <h2>Preview</h2>
+                <div id="preview-container">
+                    <!-- Preview tweets will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
