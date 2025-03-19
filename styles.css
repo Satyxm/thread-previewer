@@ -208,7 +208,7 @@ h2 {
     border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     position: relative;
 }
 
@@ -217,7 +217,7 @@ h2 {
     position: absolute;
     left: 20px;
     top: 100%;
-    bottom: -15px;
+    bottom: -25px;
     width: 2px;
     background-color: var(--border-color);
 }
@@ -407,8 +407,136 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
     .main-content {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .editor-section, .preview-section {
+        padding: 15px;
+    }
+
+    .profile-section {
+        padding: 10px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .profile-info {
+        width: 100%;
+    }
+
+    .profile-name, .profile-handle {
+        width: 100%;
+        text-align: center;
+    }
+
+    .tweet-input-container {
+        margin-bottom: 30px;
+    }
+
+    .tweet-input-container:last-child {
+        margin-bottom: 0;
+    }
+
+    .tweet-input {
+        min-height: 100px;
+        font-size: 16px;
+    }
+
+    .tweet-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .media-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .tweet-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .preview-tweet {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .preview-tweet::before {
+        bottom: -20px;
+    }
+
+    .preview-tweet .tweet-content {
+        margin-left: 30px;
+    }
+
+    .preview-tweet .tweet-avatar {
+        width: 32px;
+        height: 32px;
+    }
+
+    .preview-tweet .tweet-text {
+        font-size: 14px;
+    }
+
+    .media-preview img,
+    .media-preview video {
+        max-height: 200px;
+    }
+
+    .poll-container {
+        margin-top: 10px;
+    }
+
+    .poll-options {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .poll-option {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .tweet-input {
+        min-height: 80px;
+    }
+
+    .preview-tweet .tweet-header {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .preview-tweet .tweet-info {
+        flex-wrap: wrap;
+    }
+
+    .preview-tweet .tweet-actions {
+        justify-content: space-between;
+    }
+
+    .preview-tweet .tweet-action {
+        padding: 8px;
     }
 }
 
